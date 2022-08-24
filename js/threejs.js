@@ -272,33 +272,33 @@
 	function clamp(value, min, max) {
 		return Math.max(min, Math.min(max, value));
 	} // compute euclidean modulo of m % n
+	
+	
 	// https://en.wikipedia.org/wiki/Modulo_operation
-
-
 	function euclideanModulo(n, m) {
 		return (n % m + m) % m;
-	} // Linear mapping from range <a1, a2> to range <b1, b2>
-
-
+	} 
+	
+	// Linear mapping from range <a1, a2> to range <b1, b2>
 	function mapLinear(x, a1, a2, b1, b2) {
 		return b1 + (x - a1) * (b2 - b1) / (a2 - a1);
-	} // https://www.gamedev.net/tutorials/programming/general-and-gameplay-programming/inverse-lerp-a-super-useful-yet-often-overlooked-function-r5230/
-
-
+	} 
+	
+	// https://www.gamedev.net/tutorials/programming/general-and-gameplay-programming/inverse-lerp-a-super-useful-yet-often-overlooked-function-r5230/
 	function inverseLerp(x, y, value) {
 		if (x !== y) {
 			return (value - x) / (y - x);
 		} else {
 			return 0;
 		}
-	} // https://en.wikipedia.org/wiki/Linear_interpolation
-
-
+	} 
+	
+	// https://en.wikipedia.org/wiki/Linear_interpolation
 	function lerp(x, y, t) {
 		return (1 - t) * x + t * y;
-	} // http://www.rorydriscoll.com/2016/03/07/frame-rate-independent-damping-using-lerp/
-
-
+	} 
+	
+	// http://www.rorydriscoll.com/2016/03/07/frame-rate-independent-damping-using-lerp/
 	function damp(x, y, lambda, dt) {
 		return lerp(x, y, 1 - Math.exp(-lambda * dt));
 	} // https://www.desmos.com/calculator/vcsjnyz7x4
@@ -306,9 +306,9 @@
 
 	function pingpong(x, length = 1) {
 		return length - Math.abs(euclideanModulo(x, length * 2) - length);
-	} // http://en.wikipedia.org/wiki/Smoothstep
-
-
+	} 
+	
+	// http://en.wikipedia.org/wiki/Smoothstep
 	function smoothstep(x, min, max) {
 		if (x <= min) return 0;
 		if (x >= max) return 1;
@@ -1735,7 +1735,7 @@
 		}
 
 	}
-
+// остановился тут
 	Color.NAMES = _colorKeywords;
 
 	let _canvas;

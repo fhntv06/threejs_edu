@@ -1,16 +1,17 @@
 const volumeObject = 4;
 
-const arColor = [{
-		color: 'yellow'
+const arColor = [
+	{
+		color: 'plum'
 	},
 	{
-		color: 'red'
+		color: 'lime'
 	},
 	{
-		color: 'blue'
+		color: 'thistle'
 	},
 	{
-		color: 'yellowgreen'
+		color: 'tomato'
 	}
 ]
 
@@ -55,7 +56,8 @@ function setObjectParams(index) {
 			height: Math.random(2),
 			depth: Math.random(2)
 		},
-		color: arColor[index]
+		color: arColor[index],
+		speed: Math.random()
 	}
 
 	return objectParams;
@@ -70,7 +72,6 @@ function renderObject(index) {
 	const material = new THREE.MeshBasicMaterial(objectParams.color);
 	object = new THREE.Mesh(geometry, material);
 	object.objectParams = objectParams;
-
 	// изменение позиции
 	object.position.x = objectPositionOnAxis[index].x;
 	object.position.y = objectPositionOnAxis[index].y;
@@ -93,8 +94,9 @@ function animate() {
 function transform(object) {
 	// вращение
 	let transform = object.objectParams.transform;
+	let speed = object.objectParams.speed;
 	for (let i = 0; i < transform.axis.length; i++) {
-		object[transform.parameter][transform.axis[i]] += 0.01;
+		object[transform.parameter][transform.axis[i]] += 0.1;
 	}
 }
 
