@@ -5,34 +5,38 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );	
 
 // куб
-// const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-// const materialCube = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-// const cube = new THREE.Mesh( geometry, materialCube );
-// scene.add( cube );
+const geometryCube = new THREE.BoxGeometry( 1, 1, 1 );
+const materialCube = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+const cube = new THREE.Mesh( geometryCube, materialCube );
+cube.position.x = 5;
+scene.add( cube );
 
-camera.position.set( 0, 0, 100 );
-camera.lookAt( 0, 0, 0 );
-
-// линия
-const materialLine = new THREE.LineBasicMaterial( { color: 0x0000ff } );
-const points = [];
-points.push( new THREE.Vector3( -10, 10, 0 ) );
-points.push( new THREE.Vector3( 0, 10, 0 ) );
-points.push( new THREE.Vector3( 0, 0, 0 ) );
-points.push( new THREE.Vector3( -10, 0, 0 ) );
-points.push( new THREE.Vector3( -10, 10, 0 ) );
+// сфера
+const geometrySphere = new THREE.SphereGeometry( 1, 32, 16 );
+const materialSphere = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+const sphere = new THREE.Mesh( geometrySphere, materialSphere );
+sphere.position.x = -5;
+scene.add( sphere );
 
 
-// renderer.render( scene, camera );
+camera.position.z = 20;
+camera.position.x = -3;
+camera.position.y = 5;
+camera.rotation.x = -0.2;
+camera.rotation.y = -0.1;
+
+const kRotation = 0.01;
+function transform () {
+	sphere.rotation.x += kRotation;
+	sphere.rotation.y += kRotation;
+
+	cube.rotation.x += kRotation;
+	cube.rotation.y += kRotation;
+}
+
 function animate() {
-	for (let i = 0; i < points.length; i++) {
-		points[i].x = Math.random() * 100;
-		points[i].y = Math.random() * 100;
-	}
-	const geometry = new THREE.BufferGeometry().setFromPoints( points );
-	const line = new THREE.Line( geometry, materialLine );
-	scene.add( line );
-
+	transform();
+	
 	requestAnimationFrame( animate );
 	renderer.render( scene, camera );
 }
