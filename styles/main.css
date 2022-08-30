@@ -43,3 +43,8 @@ body {
 	z-index: 100;
 	display:block;
 }
+
+#info p {
+    background-color: #000;
+    max-width: max-content;
+}
