@@ -1,0 +1,25 @@
+.section {
+    display: grid;
+    grid-row-gap: 32px;
+    color: #fff;
+}
+
+.section__text,
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.section__text {
+    grid-row-gap: 32px;
+}
+
+.description {
+    grid-row-gap: 16px;
+}
+
+@media (max-width: 1024px) {
+    .section__text {
+        text-align: center;
+    }
+}

@@ -1,0 +1,8 @@
+.detail__title h1 {
+    margin-bottom: 32px;
+}
+
+.container__detail_text {
+    display: grid;
+    grid-row-gap: 32px;
+}

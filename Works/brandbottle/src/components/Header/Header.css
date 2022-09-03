@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    grid-column-gap: 16px;
+    height: 50px;
+}
+
+.header:hover {
+    background-color: aliceblue;
+}
+.header:hover a {
+    color: #283593;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header a.active {
+    font-weight: 500;
+}
