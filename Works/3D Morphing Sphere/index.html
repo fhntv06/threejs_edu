@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Morphing Sphere</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class='mask'></div>
+    <div class="container">
+        <h1>Неведомая хрень</h1>
+    </div>
+    <script id="vertex" type="text/glsl">
+        uniform vec3 colorA;
+        #define NORMAL
+        #if defined( FLAT_SHADED ) || defined( USE_BUMPMAP ) || defined( TANGENTSPACE_NORMALMAP )
+            varying vec3 vViewPosition;
+        #endif
+        
+        #include <packing>
+        #include <uv_pars_fragment>
+        #include <normal_pars_fragment>
+        #include <bumpmap_pars_fragment>
+        #include <normalmap_pars_fragment>
+        #include <logdepthbuf_pars_fragment>
+        #include <clipping_planes_pars_fragment>
+        
+        void main() {
+            #include <clipping_planes_fragment>
+            #include <logdepthbuf_fragment>
+            #include <normal_fragment_begin>
+            #include <normal_fragment_maps>
+        
+            gl_FragColor = vec4( normalize( normal ) * colorA + 0.5, 1.0 );
+        
+            #ifdef OPAQUE
+                gl_FragColor.a = 1.0;
+            #endif 
+        }
+    </script>
+
+    <script type='module' src="./main.js"></script>
+</body>
+</html>

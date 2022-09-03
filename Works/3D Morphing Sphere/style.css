@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.mask {
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #ffeb3b61;
+}
+
+.canvas {
+    position: absolute;
+    right: 0;
+    width: 30%;
+    height: 30%;
+}
