@@ -1,0 +1,224 @@
+* {
+    z-index: 1;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+audio {
+    z-index: 5;
+    position: fixed;
+}
+canvas {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+main {
+    z-index: 3;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 32px;
+    color: #fff;
+}
+
+main header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main header .header__inner {
+    position: relative;
+    width: 75%;
+}
+
+main header .header__inner.de--active p {
+    transform: scale(1);
+}
+
+main header .header__inner.active p {
+    transform: scale(.5);
+}
+main header .header__inner img {
+    /* transform: scale(1.5); */
+    width: 100%;
+}
+
+main header .header__inner p {
+    position: absolute;
+    top: -50px;
+    right: -30px;
+    color: red;
+    transition: 2s;
+}
+
+main section {
+    padding: 300px 200px 0 200px;
+    height: 70vh;
+    background-color: #00000026;
+    color: #526066;
+}
+
+main .section__meteorit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+main .section__meteorit--big {
+    height: 150vh;
+}
+main .section__meteorit .meteorit {
+    color:brown;
+    font-size: 90px;
+}
+
+main section p {
+    padding: 5%;
+    font-size: 70px;
+    width: max-content;
+    background: #fff;
+}
+
+#modal {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: background-color 2s;
+}
+#modal .modal {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffdf00;
+    border-radius: 8px;
+    padding: 40px;
+    transform: perspective(700px) translate3d(0, -1500px, -600px);
+    transition: transform 2s;
+    visibility: hidden;
+}
+#modal.active {
+    background-color: #3f51b5c4;
+    transition: background-color 2s;
+}
+#modal.active .modal {
+    transform: perspective(700px) translate3d(0, 0, 0);
+    visibility: visible;
+}
+
+.modal p {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 50px;
+    color: #a10e1d;
+}
+.modal .buttons {
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 20px;
+    width: 50%;
+}
+.modal button {
+    width: 100%;
+    font-size: 28px;
+    font-weight: bold;
+    border: navajowhite;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+header .active {
+    animation-name: titleTranslateForwards;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+header .de--active {
+    animation-name: titleTranslateBackwards;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+}
+
+.footer img {
+    margin-top: 30%;
+}
+
+.footer .allrigth {
+    width: 100%;
+    border-top: 2px solid #526066;
+    text-align: center;
+    font-size: 32px;
+    color: #eee;
+}
+
+.brus {
+    z-index: 3;
+    position: fixed;
+    top: 35%;
+    right: -25%;
+    height: 250px;
+    transform: rotate3d(0, 1, 1, 10deg);
+    transition: 1s;
+    opacity: 0;
+}
+
+.brus.active {
+    right: 60%;
+    opacity: 1;
+    transition: 1s;
+}
+
+.protect {
+    display: none;
+}
+.protect.active {
+    display: block;
+}
+
+@keyframes titleTranslateForwards {
+    0% {
+        transform: perspective(700px) translate3d(0, 0, 0);
+    }
+    75% {
+        transform: perspective(700px) translate3d(0, 0, -600px);
+    }
+    100% {
+        transform: perspective(700px) translate3d(0, -1500px, -600px);
+    }
+}
+
+@keyframes titleTranslateBackwards {
+    0% {
+        transform: perspective(700px) translate3d(0, -1500px, -600px);
+    }
+    75% {
+        transform: perspective(700px) translate3d(0, 0, -600px);
+    }
+    100% {
+        transform: perspective(700px) translate3d(0, 0, 0);
+    }
+}
