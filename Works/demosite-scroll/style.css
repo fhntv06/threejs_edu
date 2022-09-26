@@ -24,13 +24,14 @@ main {
     flex-direction: column;
     font-size: 32px;
     color: #fff;
+    height: 13176px;
 }
 
 main header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 1420px;
 }
 
 main header .header__inner {
@@ -59,8 +60,8 @@ main header .header__inner p {
 }
 
 main section {
-    padding: 300px 200px 0 200px;
-    height: 70vh;
+    /* padding: 300px 200px 0 200px; */
+    height: 994px;
     background-color: #00000026;
     color: #526066;
 }
@@ -155,12 +156,15 @@ header .de--active {
 }
 
 .footer {
+    position: absolute;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #000;
     color: #fff;
-    height: 100vh;
+    height: 1420px;
+    width: 100%;
 }
 
 .footer img {
