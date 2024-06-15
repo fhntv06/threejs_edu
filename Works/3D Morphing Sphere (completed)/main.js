@@ -1,4 +1,4 @@
-import { Scene, PerspectiveCamera, WebGLRenderer, Vector3, MeshNormalMaterial, Mesh, SphereGeometry, BoxGeometry, CylinderGeometry, Clock } from './node_modules/three/src/Three.js'
+import { Scene, PerspectiveCamera, WebGLRenderer, Vector3, MeshNormalMaterial, Mesh, SphereGeometry, BoxGeometry, CylinderGeometry, Clock } from 'three/src/Three.js'
 import openSimplexNoise from 'https://cdn.skypack.dev/open-simplex-noise';
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js";
 
