@@ -1,11 +1,11 @@
 // ссылка на источник: https://highload.today/blogs/react-v-3d-kak-ispolzovat-react-three-fiber/
 
-import {extend, useThree} from "https://esm.sh/@react-three/fiber";
+import {extend, useThree} from '@react-three/fiber';
 import React, {Suspense, useEffect} from "react";
 import Trans from "./Trans";
 import Floor from "./Floor";
 
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.module.js";
+import * as THREE from '../three.module.js';
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js";
 
 extend({OrbitControls})
