@@ -1,10 +1,10 @@
 import React, {useRef, useEffect} from "react";
-import * as THREE from "../three.module.js";
+import { MeshPhongMaterial, Color } from "../three.module.js";
 import { GLTFLoader } from "../GLTFLoader.js";
 import {useLoader} from "@react-three/fiber";
 
-const INITIAL_MTL = new THREE.MeshPhongMaterial({
-    color: new THREE.Color(0xf1f1f1),
+const INITIAL_MTL = new MeshPhongMaterial({
+    color: new Color(0xf1f1f1),
     shininess: 10
 });
 

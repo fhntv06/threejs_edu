@@ -1,5 +1,5 @@
 import React from "react";
-import * as THREE from "../three.module.js";
+import { Color } from "../three.module.js";
 
 const Floor = () => {
     return(
@@ -10,7 +10,7 @@ const Floor = () => {
         >
             <planeGeometry args={[5000,5000,1,1]} />
             <meshPhongMaterial
-                color={new THREE.Color(0xeeeeee)}
+                color={new Color(0xeeeeee)}
                 shininess={0}
             />
         </mesh>

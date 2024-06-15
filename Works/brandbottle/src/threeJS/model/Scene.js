@@ -5,7 +5,7 @@ import React, {Suspense, useEffect} from "react";
 import Trans from "./Trans";
 import Floor from "./Floor";
 
-import * as THREE from '../three.module.js';
+import { Color, Fog, Vector2 } from '../three.module.js';
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js";
 
 extend({OrbitControls})
@@ -19,10 +19,10 @@ export default function Scene ( {newMaterialOpt} ) {
     // Scene configuration;
     useEffect(() => {
         const directionalLight = scene.children[1];
-        scene.background = new THREE.Color(0xf1f1f1);
-        scene.fog = new THREE.Fog(0xf1f1f1, 20, 100);
+        scene.background = new Color(0xf1f1f1);
+        scene.fog = new Fog(0xf1f1f1, 20, 100);
         camera.fov = 50;
-        directionalLight.shadow.mapSize = new THREE.Vector2(1024, 1024)
+        directionalLight.shadow.mapSize = new Vector2(1024, 1024)
         shadowMap.enabled = true;
         console.log(scene);
     })
@@ -31,13 +31,13 @@ export default function Scene ( {newMaterialOpt} ) {
         <>
             <orbitControls args={[camera, domElement]}/>
             <hemisphereLight
-                skycolor={new THREE.Color(0xffffff)}
-                groundColor={new THREE.Color(0xffffff)}
+                skycolor={new Color(0xffffff)}
+                groundColor={new Color(0xffffff)}
                 intensity={0.61}
                 position={[0, 50, 0]}
             />
             <directionalLight
-                color={new THREE.Color(0xffffff)}
+                color={new Color(0xffffff)}
                 intensity={0.54}
                 position={[-8, 12, 8]}
                 castShadow
