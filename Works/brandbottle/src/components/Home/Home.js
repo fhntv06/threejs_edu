@@ -14,7 +14,7 @@ export default function Home () {
                 <h3>Только у нас лучшие трансформаторы по хорошей цене!</h3>
             </div>
         </div>
-        <Scene />
+        {/* <Scene /> */}
     </>
     )
 }
