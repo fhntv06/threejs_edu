@@ -6,9 +6,9 @@ import './index.css';
 import Products from './components/Products/Products';
 import Header from './components/Header/Header'
 import Home from './components/Home/Home'
+import DetailView from './components/DetailView/DetailView';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const numberProduct = 1;
 
 root.render(
   <React.Fragment>
@@ -19,8 +19,8 @@ root.render(
           <div className={'section'}>
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/products' element={<Products />} />
-              <Route path={`/products/${numberProduct}`} element={<Products numberProduct={numberProduct}/>} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:id" element={<DetailView />} />
             </Routes>
           </div>
         </BrowserRouter>
