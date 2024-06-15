@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 
 import './DetailView.css';
 
-import Scene from '../../threeJS/model/Scene';
+import Scene from '../Scene/Scene.js';
+
 export default function DetailView () {
     const { id } = useParams();
 

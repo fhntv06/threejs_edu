@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css'
 
-import Scene from '../../threeJS/model/Scene'
+import Scene from '../Scene/Scene.js'
 export default function Home () {
     return (
     <>
@@ -14,7 +14,7 @@ export default function Home () {
                 <h3>Только у нас лучшие трансформаторы по хорошей цене!</h3>
             </div>
         </div>
-        {/* <Scene /> */}
+        <Scene />
     </>
     )
 }

@@ -60,5 +60,11 @@ body a:hover,
 
 #model {
   height: 350px;
+  width: 100%;
   background-color: yellowgreen;
+}
+
+#model canvas {
+  height: 100% !important;
+  width: 100% !important;
 }
