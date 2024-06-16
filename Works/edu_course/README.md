@@ -1,0 +1,1 @@
+Курс проходился на YouTube: https://www.youtube.com/playlist?list=PLMvzSzCWuRTgunevtSLw3Zkq1hRx2Z2Ma
